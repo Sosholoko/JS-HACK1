@@ -6,12 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;1,100&display=swap" rel="stylesheet">
     <title>Dashboard</title>
 </head>
 <body>
+    
     <div class="app-wrap">
+        <h2 id="wel"><span id="greet"></span> <span id="user">Sasha</span></h2>
+        <div class="wrapper">
+            <div class="display">
+                <div id="time"></div>
+            </div>
+            <span></span>
+            <span></span>
+        </div>
         <header>
             <input type="text" autocomplete="off" class="search-box" 
             placeholder="Search for a city...">
@@ -19,14 +29,16 @@
         <main>
             <section class="location">
                 <div class="city">Tel Aviv</div>
-                <div class="date">Thursday 14th July 2021</div>
+                <div class="date">Thursday 15th July 2021</div>
             </section>
             <div class="current">
                 <div class="temp">27<span>C°</span></div>
-                <div class="weather">Sunny</div>
+                <div class="weather">Sunny <i class="fas fa-sun"></i></div>
                 <div class="hi-low">26°c / 32°c</div>
             </div>
+            <input type="text" class="name" id="nameUser" autocomplete="off" placeholder="What's your name ?">
         </main>
+        
     </div>
 </body>
 <script src="script.js"></script>
