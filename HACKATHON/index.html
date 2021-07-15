@@ -15,6 +15,7 @@
     
     <div class="app-wrap">
         <h2 id="wel"><span id="greet"></span> <span id="user">Sasha</span></h2>
+        
         <div class="wrapper">
             <div class="display">
                 <div id="time"></div>
@@ -22,13 +23,14 @@
             <span></span>
             <span></span>
         </div>
+        <input type="text" class="google" id="google" placeholder="Search for a city...">
         <header>
             <input type="text" autocomplete="off" class="search-box" 
-            placeholder="Search for a city...">
+            placeholder="Google Search"><i class="fab fa-google"></i>
         </header>
         <main>
             <section class="location">
-                <div class="city">Tel Aviv</div>
+                <div class="city">Herzliya</div>
                 <div class="date">Thursday 15th July 2021</div>
             </section>
             <div class="current">
@@ -37,9 +39,12 @@
                 <div class="hi-low">26°c / 32°c</div>
             </div>
             <input type="text" class="name" id="nameUser" autocomplete="off" placeholder="What's your name ?">
+            
         </main>
         
     </div>
 </body>
 <script src="script.js"></script>
+<script async src="https://cse.google.com/cse.js?cx=000888210889775888983:pqb3ch1ewhg"></script>
+
 </html>

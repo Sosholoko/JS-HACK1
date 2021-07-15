@@ -4,6 +4,21 @@
 
 // console.log(time.today.getHours);
 
+let gglbox = document.querySelector(".search-box");
+
+gglbox.addEventListener("keypress", search);
+
+function search(e){
+    if(e.keyCode === 13){
+        window.location='http://www.google.com/search?q='+escape(gglbox.value);
+        gglbox.value = "";
+    }
+};
+
+
+
+
+
 let user = document.getElementById("user");
 let field = document.getElementById("nameUser");
 let username = field.value;
@@ -28,15 +43,7 @@ let minutes = date.getMinutes();
 let seconds = date.getSeconds();
 let day_night = 'AM';
 
-if(hours < 12){
-    greet.textContent = "Good Morning";
-}
-else if(hours > 12 || hours < 18){
-    greet.textContent = "Good Afternoon";
-}
-else{
-    greet.textContent = "Good Evening";
-}
+
 
 if (hours > 12){
     day_night = "PM";
@@ -51,6 +58,15 @@ if (minutes < 10){
 if (seconds < 10){
     seconds = "0" + seconds;
 }
+if(day_night === "AM"){
+    greet.textContent = "Good Morning,";
+}
+else if(hours < 5 && day_night === "PM"){
+    greet.textContent = "Good Afternoon,";
+}
+else if(hours > 5 && day_night === "PM"){
+    greet.textContent = "Good Evening,";
+}
 
 time.textContent = hours + " " + ":" + " " + minutes + " " + ":" + " " + seconds + " " + day_night;
 },1000);
@@ -60,12 +76,13 @@ const api = {
     base:  "https://api.openweathermap.org/data/2.5/"
 };
 
-const searchbox = document.querySelector('.search-box');
+const searchbox = document.querySelector('.google');
 searchbox.addEventListener('keypress', setQuery);
 
 function setQuery(e){
     if(e.keyCode === 13){
         getResults(searchbox.value)
+        searchbox.value = "";
         
     }
 };

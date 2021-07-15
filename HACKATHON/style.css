@@ -13,12 +13,34 @@ body{
     
 }
 
+#google{
+    font-size: 20px;
+    border-radius: 15px;
+    background-color: transparent;
+    border: .5px solid rgb(189, 189, 189);
+    color: white;
+    padding: 5px;
+    width: 250px;
+    margin-left: 42px;
+    margin-top: 20px;
+    text-align: center;
+}
+#google:focus{
+    outline: none;
+}
+
+.fa-google{
+    color: rgb(38, 101, 195);
+    position: relative;
+    right: 30px;
+}
+
 .wrapper{
     position: absolute;
-    margin-left: 800px;
+    margin-left: 860px;
     margin-top: 5px;
     height: 100px;
-    width: 200px;
+    width: 250px;
     /* background: rgba(172, 174, 177, 0.459); */
     border-radius: 20px;
 
@@ -39,7 +61,7 @@ body{
     z-index: 999;
     /* background: rgba(235, 235, 236, 0.322); */
     height: 85px;
-    width: 185px;
+    width: 205px;
     text-align: center;
 }
 
@@ -52,7 +74,7 @@ body{
 
 #wel{
     color: white;
-    padding-left: 20px;
+    padding-left: 40px;
     padding-top: 30px;
 }
 
@@ -62,6 +84,7 @@ body{
     background-color: transparent;
     border: 1px solid white;
     color: white;
+    width: 300px;
     text-align: center;
     border-radius: 10px;
     padding:8px;
