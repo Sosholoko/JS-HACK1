@@ -31,13 +31,19 @@
         <main>
             <section class="location">
                 <div class="city">Herzliya</div>
-                <div class="date">Thursday 15th July 2021</div>
+                <div class="date">Friday 16th July 2021</div>
             </section>
             <div class="current">
                 <div class="temp">27<span>C°</span></div>
                 <div class="weather">Sunny <i class="fas fa-sun"></i></div>
                 <div class="hi-low">26°c / 32°c</div>
             </div>
+            <div class="adding">
+            <input id="field" type="text" placeholder="Todo"><button id="add" type="submit" onclick="adding()"><i class="fas fa-plus-circle"></i></button>
+            </div>
+            <div class="tasks" id="tasks">
+            </div>
+            <button id="clr" onclick="deletall()">Clear <i class="fas fa-backspace"></i></button>
             <input type="text" class="name" id="nameUser" autocomplete="off" placeholder="What's your name ?">
             
         </main>

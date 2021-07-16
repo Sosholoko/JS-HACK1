@@ -1,6 +1,55 @@
 //JAVASCRIPT CODE
 
 
+
+let fieldd = document.getElementById("field");
+let button = document.getElementById("add");
+let area = document.getElementById("tasks");
+let del = document.getElementById("del");
+let arr = [];
+let task;
+//function for the add button to take the info from the field
+
+fieldd.addEventListener('keypress', addNew);
+
+function addNew(e){
+    if(e.keyCode === 13){
+        adding()
+    }
+};
+
+function adding(){
+    let value = fieldd.value;
+    if (value.length <= 0){
+        alert("You need to create a task first")
+    }
+    else{
+        console.log(value);
+    let task = document.createElement("li");
+    arr.push(value);
+    console.log(arr);
+    task.setAttribute("id", arr.indexOf(value));
+    task.innerHTML = `${value}
+    <button id="del" onclick="deleting(event)">✕</button>
+    <input type="checkbox" id="check"></input>`; 
+    area.appendChild(task);
+    fieldd.value = '';
+    };
+    
+};
+
+function deleting(e){
+    e.target.parentNode.remove();
+    arr.shift();
+};
+
+function deletall(){
+    arr = [];
+    area.innerHTML = "";
+}
+
+
+
 //Google search area
 
 let gglbox = document.querySelector(".search-box");
@@ -13,6 +62,10 @@ function search(e){
         gglbox.value = "";
     }
 };
+
+
+
+
 
 //Name adding to the top page
 
@@ -61,7 +114,7 @@ if(day_night === "AM"){
     greet.textContent = "☀️ Good Morning,";
 }
 else if(hours < 5 && day_night === "PM"){
-    greet.textContent = "Good Afternoon,";
+    greet.textContent = "⚡️ Good Afternoon,";
 }
 else if(hours > 5 && day_night === "PM"){
     greet.textContent = "🌙 Good Evening,";
@@ -99,8 +152,10 @@ function getResults(query){
 
 function displayResults(weather){
     console.log(weather);
+
     let city = document.querySelector('.location .city');
     city.innerHTML = `${weather.name}, ${weather.sys.country}`;
+
     let now = new Date();
     let date = document.querySelector('.location .date');
     date.innerHTML = dateBuilder(now);

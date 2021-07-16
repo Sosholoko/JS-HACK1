@@ -9,8 +9,75 @@ body{
     background-image: url(bgweather3.jpg);
     background-size: cover;
     background-position: top center;
+    height: 750px;
     
-    
+}
+
+#tasks{
+    /* border: 1px solid white; */
+    width: 300px;
+    height: 100px;
+    float: left;
+    position: relative;
+    right: 480px;
+    bottom: 100px;
+    overflow-y: scroll;
+}
+#field{
+    position: relative;
+    border-radius: 10px;
+    background-color: transparent;
+    border: none;
+    right: 450px;
+    top: 50px;
+    text-align: center;
+    color: white;
+}
+#field:focus{
+    outline: none;
+}
+#add{
+    position: relative;
+    right: 450px;
+    top: 50px;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+#clr{
+    position: relative;
+    bottom: 20px;
+    right: 450px;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.tasks li{
+    color: white;
+    list-style: none;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+#del, #check{
+    float: right;
+}
+#check, #del{
+    margin-right: 10px;
+}
+#del{
+    font-size: 15px;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    margin-top: 2px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    z-index: 999;
+}
+#check{
+    margin-top: 6px;
 }
 
 #google{
@@ -88,6 +155,8 @@ body{
     text-align: center;
     border-radius: 10px;
     padding:8px;
+    position: relative;
+    bottom: 100px;
 
 }
 #nameUser:focus{
@@ -98,6 +167,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    height: 700px;
     border: 2px solid rgba(185, 183, 183, 0.76);
     border-radius: 50px;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3),rgba(0,0,0,0.6));
