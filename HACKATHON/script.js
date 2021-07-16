@@ -1,8 +1,7 @@
-// let greet = document.getElementById("greet");
-// var today = new Date();
-// var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+//JAVASCRIPT CODE
 
-// console.log(time.today.getHours);
+
+//Google search area
 
 let gglbox = document.querySelector(".search-box");
 
@@ -15,9 +14,7 @@ function search(e){
     }
 };
 
-
-
-
+//Name adding to the top page
 
 let user = document.getElementById("user");
 let field = document.getElementById("nameUser");
@@ -33,6 +30,8 @@ function setName(e){
     }
 }
 
+
+//Dynamic Clock
 
 setInterval(()=>{
 const time = document.querySelector('#time');
@@ -59,17 +58,21 @@ if (seconds < 10){
     seconds = "0" + seconds;
 }
 if(day_night === "AM"){
-    greet.textContent = "Good Morning,";
+    greet.textContent = "☀️ Good Morning,";
 }
 else if(hours < 5 && day_night === "PM"){
     greet.textContent = "Good Afternoon,";
 }
 else if(hours > 5 && day_night === "PM"){
-    greet.textContent = "Good Evening,";
+    greet.textContent = "🌙 Good Evening,";
 }
 
 time.textContent = hours + " " + ":" + " " + minutes + " " + ":" + " " + seconds + " " + day_night;
 },1000);
+
+
+//Weather API Query
+
 
 const api = {
     key: "50ffb377a9e7fb850ce6795a293a99d2",

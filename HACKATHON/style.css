@@ -21,7 +21,7 @@ body{
     color: white;
     padding: 5px;
     width: 250px;
-    margin-left: 42px;
+    margin-left: 62px;
     margin-top: 20px;
     text-align: center;
 }
@@ -112,6 +112,7 @@ header{
 
 .search-box{
     color: black;
+    margin-left: 10px;
 }
 
 header input{
