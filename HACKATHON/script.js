@@ -18,6 +18,8 @@ function addNew(e){
     }
 };
 
+//Add new todo
+
 function adding(){
     let value = fieldd.value;
     if (value.length <= 0){
@@ -38,10 +40,15 @@ function adding(){
     
 };
 
+//Delete single element
+
 function deleting(e){
     e.target.parentNode.remove();
     arr.shift();
 };
+
+
+//Delete all todos
 
 function deletall(){
     arr = [];
