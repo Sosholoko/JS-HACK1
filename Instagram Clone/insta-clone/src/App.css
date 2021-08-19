@@ -1,0 +1,39 @@
+*{
+  margin:0;
+}
+.App{
+  background-color: #fafafa;
+  height: 100vh;
+}
+.app__header{
+  position: fixed;
+  top: 0;
+  width: 96%;
+  z-index: 1;
+  background-color: white;
+  padding: 20px;
+  object-fit: contain;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+}
+
+#userN{
+  margin-right: 10%;
+  border: .5px solid black;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.app__headerImage{
+  object-fit: contain;
+}
+
+.app__posts{
+  padding: 25px;
+}
+
+.app__signup{
+  display: flex;
+  flex-direction: column;
+}
