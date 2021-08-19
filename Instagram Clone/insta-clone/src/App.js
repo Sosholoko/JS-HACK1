@@ -25,7 +25,7 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    width: 200,
+    width: 280,
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
@@ -116,8 +116,8 @@ function App() {
         <form className='app__signup'>
           <center>
           <img className="app__headerImage" 
-            src="insta.png"alt="" 
-            height='50px'width='160px' alt=""
+            src="famygram.png"alt="" 
+            height='70px'width='180px' alt=""
             />
           </center>
             <Input 
@@ -153,8 +153,8 @@ function App() {
         <form className='app__signup'>
           <center>
           <img className="app__headerImage" 
-            src="insta.png"alt="" 
-            height='50px'width='160px' alt=""
+            src="famygram.png"alt="" 
+            height='70px'width='180px' alt=""
             />
           </center>
             <Input 
@@ -178,11 +178,11 @@ function App() {
 
 
       <div className='app__header'>
-        <img className="app__headerImage" src="insta.png"alt="" height='50px'width='160px'/>
+        <img className="app__headerImage" src="famygram2.png"alt="" height='60px'width='200px'/>
         
         {user ? (
           <div className="logged">
-            <span id='userN'>{user.displayName}</span><Button onClick={() => auth.signOut()}>Log Out</Button>
+            <span id='userN'>{user.displayName}</span><Button  onClick={() => auth.signOut()}><span className='btn__logout'>Log Out</span></Button>
           </div>
       ): (
         <div className='app__loginContainer'>
@@ -205,6 +205,16 @@ function App() {
 {/* <p><img src='adar.jpg' height='60px' width='60px'></img><br/>adarH</p> */}
         </div>
       )}
+      {user ? (
+        <div className="app__welcome">
+          <h2><span>Welcome back</span> {user.displayName}</h2>
+        </div>
+      ) : (
+        <div>
+
+        </div>
+      )}<br></br><br></br>
+
       <div className='app__posts'>
         {
         posts.map(({id, post}) =>(

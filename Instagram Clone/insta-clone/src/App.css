@@ -11,7 +11,8 @@
   width: 96%;
   z-index: 1;
   background-color: white;
-  padding: 20px;
+  padding: 15px;
+  padding-left: 0;
   object-fit: contain;
   border-bottom: 1px solid lightgray;
   display: flex;
@@ -28,8 +29,29 @@
   padding: 10px;
 }
 
+.btn__logout{
+  color: rgb(136, 42, 42);
+  margin-right: 0px;
+}
+
+.logged{
+  margin-top: 10px;
+}
+
+.app__welcome{
+  text-align: center;
+}
+
+.app__welcome h2{
+  margin-top: 25px;
+}
+.app__welcome span{
+  font-weight: lighter;
+}
+
 .app__headerImage{
   object-fit: contain;
+  margin-right: 20px;
 }
 
 .app__story{
@@ -56,7 +78,7 @@
 }
 
 .app__posts{
-  padding: 15px;
+  padding: 0px;
 }
 
 .app__signup{
