@@ -19,18 +19,44 @@
 }
 
 #userN{
-  margin-right: 10%;
+  /* margin-right: 10%; */
+  margin-right: 10px;
+  margin-top: 15px;
+  font-size: 15px;
   border: .5px solid black;
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
 }
 
 .app__headerImage{
   object-fit: contain;
 }
 
+.app__story{
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid lightgray;
+  padding: 10px;
+  padding-top: 20px ;
+  overflow-y: scroll;
+}
+.app__story p{
+  font-size: 10px;
+  margin-left: 20px;
+} 
+.app__story img{
+  border-radius: 50%;
+  border: 3px solid rgb(245, 165, 37);
+}
+
+#prostory img{
+  display: flex;
+  border-radius: 50%;
+  border: 3px solid rgb(14, 167, 255);
+}
+
 .app__posts{
-  padding: 25px;
+  padding: 15px;
 }
 
 .app__signup{

@@ -1,5 +1,5 @@
 .post{
-    max-width: 500px;
+    max-width: 750px;
     background-color: white;
     border: 1px solid lightgray;
     margin-bottom: 45px;
@@ -15,6 +15,7 @@
 }
 .post__text{
     font-weight: normal;
+    font-size: 20px;
 }
 .post__text{
     padding: 15px;
@@ -37,9 +38,10 @@
 }
 
 .post__input{
-    flex: 2;
+    flex: 5;
     border: none;
     padding: 10px;
+    font-size: 20px;
     border-top: 1px solid lightgray;
 }
 .post__input:focus{
@@ -49,26 +51,42 @@
 .post__comments{
     padding: 10px;
     color: rgb(82, 82, 82);
+    font-size: 15px;
 }
 
 .fa-ellipsis-v{
-    margin-left: 70%;
+    margin-left: 55%;
 }
 
 .post__like{
-    padding-left: 10px;
-    
+    padding-left: 15px;
+    padding-top: 5px;
 }
 
-.fa-heart{
-    font-size: 25px;
+.fa-heart, .fa-comment, .fa-bookmark, .fa-paper-plane{
+    font-size: 35px;
     color: rgb(0, 0, 0);
+    font-weight: lighter;
+}
+.fa-paper-plane{
+    margin-left: 18px;
+    font-weight: lighter;
+    font-size: 32px;
+    -webkit-text-stroke: 0px black;
+}
+
+.fa-comment{
+    margin-left: 20px;
+}
+.fa-bookmark{
+    float: right;
+    margin-right: 20px;
 }
 
 .post__button{
-    flex: 1;
+    flex: 2;
     color: rgb(77, 152, 238);
-    font-size: 15px;
+    font-size: 10px;
     border: none;
     border-top: 1px solid lightgray;
     background-color: white;

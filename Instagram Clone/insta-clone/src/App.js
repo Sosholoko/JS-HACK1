@@ -25,7 +25,7 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    width: 400,
+    width: 200,
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
@@ -196,6 +196,15 @@ function App() {
 
       {/* header*/}
       <br></br><br></br><br></br><br></br><br></br>
+      {user ? (
+      <div className='app__story'>
+        <p><img src='jimh.jpg' height='60px' width='60px'></img><br/>jimHalp</p><p id='prostory'><img src='sasha.jpg' height='60px' width='60px'></img><br/>{user.displayName}</p><p><img src='john.jpg' height='60px' width='60px'></img><br/>JohnDD</p><p><img src='mark.jpg' height='60px' width='60px'></img><br/>Mark1878</p><p><img src='sarah.jpg' height='60px' width='60px'></img><br/>Sarah77</p><p><img src='omer.jpg' height='60px' width='60px'></img><br/>omerAda</p>
+      </div>
+      ) :(
+        <div>
+{/* <p><img src='adar.jpg' height='60px' width='60px'></img><br/>adarH</p> */}
+        </div>
+      )}
       <div className='app__posts'>
         {
         posts.map(({id, post}) =>(

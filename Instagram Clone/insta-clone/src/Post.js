@@ -6,7 +6,7 @@ import {db} from './Firebase';
 
 function Post({postId, user, username, caption, imageUrl}){
 const [comments, setComments]= useState([]); 
-const [comment, setComment]= useState('');
+const [comment, setComment]= useState([]);
 
 useEffect(() => {
     let unsubscribe;
@@ -33,7 +33,7 @@ useEffect(() => {
             username: user.displayName,
             timestamp : firebase.firestore.FieldValue.serverTimestamp()
         });
-        setComments('');
+        setComments([]);
     }
 
     return (
@@ -44,25 +44,28 @@ useEffect(() => {
                 alt={username}
                 src='#'
                 />
-                <h3>{username}</h3>
+                <h2>{username}</h2>
                 <i class="fas fa-ellipsis-v"></i>
             </div>
             
             <img className='post__img' src ={imageUrl}></img>
             <div className='post__like'>
-                <i class="far fa-heart"></i>
+                <i class="far fa-heart"></i><i class="far fa-comment"></i><i class="far fa-bookmark"></i><i class="far fa-paper-plane"></i>
             </div>
             <h4 className='post__text'><strong>{username}</strong> {caption}</h4>
-        
+        {
+            console.log(comments)
+        }
         <div className='post__comments'>
-            {comments.map((comment) => (
-                <p>
-                    <strong>{comment.username}</strong> {comment.text}
-                </p>
+            {
+                comments.map((comment) => (
+                    <p>
+                            <strong>{comment.username}</strong> {comment.text}
+                    </p>
             ))}
         </div>
             
-
+        {/* comments.map((comment) */}
             <form className='post__commentBox'>
                 <input
                 className="post__input"
@@ -74,10 +77,10 @@ useEffect(() => {
                 <button
                 className='post__button'
                 disabled={!comment}
-                type='submit'
+                type='button'
                 onClick={postComment}
                 >
-                POST
+                POST ➤
                 </button>
             </form>
         </div>
