@@ -14,15 +14,19 @@
 }
 
 .imageupload__input{
-    font-size: 15px;
-    padding: 5px;
+    font-size: 20px;
+    padding: 6px;
     border: none;
-    border-bottom: .5px solid black;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     text-align: center;
-    width: 60%;
+    width: 65%;
     /* border-radius: 10px; */
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 28%;
+    /* margin-right: auto; */
     background-color: transparent;
 }
 .imageupload__input:focus{
@@ -31,9 +35,16 @@
 }
 
 .imageupload__button{
-    border: 1px solid lightgray;
-    background-color: rgb(248, 248, 248);
-    padding-top: 10px;
+    border: 1px solid rgb(131, 131, 131);
+    background-color: rgb(185, 157, 157);
+    padding-top: 0px;
+}
+
+.upload__button{
+    color: black;
+    border: 1px solid black;
+    padding: 8px;
+    border-radius: 10px;
 }
 
 .upload__btn{
@@ -44,16 +55,26 @@
 
 input[type="file"]{
     color: transparent;
+    margin-right: 180px;
 }
 
 input[type=file]::file-selector-button {
-    background-color: rgb(0, 0, 0);
-    margin-top: 10px;
-    border-radius: 8px;
+    background-color: transparent;
+    position: relative;
+    bottom: 42px;
     border: none;
-    color: white;
-    padding: 7px;
-    font-size: 10px;
+    right: 140px;
+    margin-top: 0px;
+    border-radius: 0px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 12px;
 }
 
 .imageupload__progress{
@@ -62,3 +83,7 @@ input[type=file]::file-selector-button {
     margin-left: auto;
     margin-right: auto;
 }
+
+.image__btns{
+}
+

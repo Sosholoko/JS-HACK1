@@ -45,7 +45,8 @@ useEffect(() => {
                 src='#'
                 />
                 <h2>{username}</h2>
-                <i class="fas fa-ellipsis-v"/>
+                <p id='dots'>...</p>
+                {/* <i class="fas fa-ellipsis-v"/> */}
             </div>
             
             <img className='post__img' src ={imageUrl}></img>

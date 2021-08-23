@@ -28,8 +28,10 @@ const useStyles = makeStyles((theme) => ({
     width: 280,
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
+    borderRadius: '15px',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+    outline: 'none',
   },
 }));
 
@@ -116,7 +118,7 @@ function App() {
         <form className='app__signup'>
           <center>
           <img className="app__headerImage" 
-            src="famygram.png"alt="" 
+            src="famigram5.png"alt="" 
             height='70px'width='180px' alt=""
             />
           </center>
@@ -139,7 +141,7 @@ function App() {
             onChange={(e)=> setPassword(e.target.value)}
             />
             
-            <Button onClick={signUp}>Sign Up</Button>
+            <Button className='signup__btn' onClick={signUp}>Sign Up</Button>
               
           </form>
         </div>
@@ -153,7 +155,7 @@ function App() {
         <form className='app__signup'>
           <center>
           <img className="app__headerImage" 
-            src="famygram.png"alt="" 
+            src="famigram5.png"alt="" 
             height='70px'width='180px' alt=""
             />
           </center>
@@ -170,7 +172,7 @@ function App() {
             onChange={(e)=> setPassword(e.target.value)}
             />
             
-            <Button onClick={signIn}>Sign In</Button>
+            <Button className='signin__btn' onClick={signIn}>Sign In</Button>
               
           </form>
         </div>
@@ -178,15 +180,16 @@ function App() {
 
 
       <div className='app__header'>
-        <img className="app__headerImage" src="famygram2.png"alt="" height='60px'width='200px'/>
+        {/* <img className="app__headerImage" src="famigram5.png"alt="" height='60px'width='200px'/> */}
         
         {user ? (
           <div className="logged">
-            <span id='userN'>{user.displayName}</span><Button  onClick={() => auth.signOut()}><span className='btn__logout'>Log Out</span></Button>
+            <span id='userN'>{user.displayName}</span> <img className="app__headerImage" src="famigram5.png"alt="" height='40px'width='150px'/><Button  onClick={() => auth.signOut()}><span className='btn__logout'>Log Out</span></Button>
           </div>
       ): (
         <div className='app__loginContainer'>
-          <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
+          <img className="app__headerImage" src="famigram5.png"alt="" height='60px'width='170px'/>
+          <Button className='app__btn-login' onClick={() => setOpenSignIn(true)}>Sign In</Button>
           <Button onClick={() => setOpen(true)}>Sign Up</Button>
         </div>
       )}
@@ -195,11 +198,20 @@ function App() {
       
 
       {/* header*/}
-      <br></br><br></br><br></br><br></br><br></br>
+      
       {user ? (
+        <>
+      <br></br><br></br><br></br><br></br><br></br>
       <div className='app__story'>
-        <p><img src='jimh.jpg' height='60px' width='60px'></img><br/>jimHalp</p><p id='prostory'><img src='sasha.jpg' height='60px' width='60px'></img><br/>{user.displayName}</p><p><img src='john.jpg' height='60px' width='60px'></img><br/>JohnDD</p><p><img src='mark.jpg' height='60px' width='60px'></img><br/>Mark1878</p><p><img src='sarah.jpg' height='60px' width='60px'></img><br/>Sarah77</p><p><img src='omer.jpg' height='60px' width='60px'></img><br/>omerAda</p>
+        <p><img src='jimh.jpg' height='50px' width='50px'>
+        </img><br/>jimHalp</p><p id='prostory'>
+        <img src='sasha.jpg' height='50px' width='50px'></img><br/>{user.displayName}</p><p>
+        <img src='john.jpg' height='50px' width='50px'></img><br/>JohnDD</p><p>
+        <img src='mark.jpg' height='50px' width='50px'></img><br/>Mark1878</p><p>
+        <img src='sarah.jpg' height='50px' width='50px'></img><br/>Sarah77</p><p>
+        <img src='omer.jpg' height='50px' width='50px'></img><br/>omerAda</p>
       </div>
+      </>
       ) :(
         <div>
 {/* <p><img src='adar.jpg' height='60px' width='60px'></img><br/>adarH</p> */}
@@ -207,7 +219,7 @@ function App() {
       )}
       {user ? (
         <div className="app__welcome">
-          <h2><span>Welcome back</span> {user.displayName}</h2>
+          <h2><span>Welcome back</span> {user.displayName} 😉</h2>
         </div>
       ) : (
         <div>
@@ -215,20 +227,32 @@ function App() {
         </div>
       )}<br></br><br></br>
 
-      <div className='app__posts'>
-        {
-        posts.map(({id, post}) =>(
-          <Post key={id} postId={id} user={user} username ={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
-        ))
-      }
+
+      {user? (
+          <div className='app__posts'>
+            {
+              posts.map(({id, post}) =>(
+                <Post key={id} postId={id} user={user} username ={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
+              ))
+            }
       </div>
+      ):(
+        <div className='app__welpage'>
+        <center><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          <h1>Welcome to </h1><img src='famigramw.png' height='60px' width='150px'></img><br></br><br></br>
+          <h3><br/><button className='signin__btn' onClick={() => setOpenSignIn(true)}>Sign in</button><br/><br/>OR<br/><br/><button onClick={() => setOpen(true)}>Sign up</button></h3>
+        </center>
+        </div>
+      )}
+      
 
       
       
       {user?.displayName ? (
         <ImageUpload username={user.displayName}/>
       ): (
-        <h3>Sorry you need to log in to upload...</h3>
+        // <h3>Sorry you need to log in to upload...</h3>
+        <div></div>
       )}
       {/* Posts*/}
       

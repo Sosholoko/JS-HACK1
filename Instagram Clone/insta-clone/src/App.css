@@ -2,13 +2,13 @@
   margin:0;
 }
 .App{
-  background-color: #fafafa;
+  background-color: white;
   height: 100vh;
 }
 .app__header{
   position: fixed;
   top: 0;
-  width: 96%;
+  width: 100%;
   z-index: 1;
   background-color: white;
   padding: 15px;
@@ -21,21 +21,58 @@
 
 #userN{
   /* margin-right: 10%; */
-  margin-right: 10px;
-  margin-top: 15px;
-  font-size: 15px;
-  border: .5px solid black;
+  margin-left: 15px;
+  margin-top: 0px;
+  height: 20px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  border: 1px solid black;
   border-radius: 10px;
-  padding: 10px;
+  padding: 8px;
 }
 
 .btn__logout{
   color: rgb(136, 42, 42);
-  margin-right: 0px;
+  border: 1px solid rgb(136, 42, 42);
+  border-radius: 10px;
+  padding: 5px;
+  height: 20px;
+  margin-left: 10px;
+  margin-bottom: 16px;
+  font-size: 10px;
 }
 
+/* .logged Button{
+  width: 100px;
+  margin-left: 270px;
+} */
+
+.signup__btn, .signin__btn{
+  font-size: 10px;
+  color: aqua;
+}
+
+/* .app__loginContainer Button{
+  font-size: 12px;
+  margin-top: 15px;
+} */
+
 .logged{
-  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.logged img{
+  margin-left: 11px;
+}
+
+.app__loginContainer{
+  display: flex;
+}
+
+.app__loginContainer img{
+  margin-left: 12px;
 }
 
 .app__welcome{
@@ -44,6 +81,7 @@
 
 .app__welcome h2{
   margin-top: 25px;
+  text-align: center;
 }
 .app__welcome span{
   font-weight: lighter;
@@ -52,14 +90,15 @@
 .app__headerImage{
   object-fit: contain;
   margin-right: 20px;
+  color: black;
 }
 
 .app__story{
   display: flex;
   justify-content: space-around;
   border: 1px solid lightgray;
-  padding: 10px;
-  padding-top: 20px ;
+  padding: 8px;
+  padding-top: 35px ;
   overflow-y: scroll;
 }
 .app__story p{
@@ -85,3 +124,24 @@
   display: flex;
   flex-direction: column;
 }
+
+.app__welpage{
+  background: linear-gradient(rgb(219, 123, 45),rgb(202, 60, 60) ,rgb(187, 46, 156));
+  border-left: 1px solid rgb(255, 255, 255);
+  border-right: 1px solid rgb(255, 255, 255);
+  border-top: 10px solid rgb(219, 123, 45);
+  border-bottom: 1px solid rgb(255, 255, 255);
+  color: white;
+  height: 100%;
+}
+
+.app__welpage button{
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 25px;
+  padding: 12px;
+  background-color: white;
+  color: black;
+  font-size: 22px;
+  font-weight: lighter;
+}
+

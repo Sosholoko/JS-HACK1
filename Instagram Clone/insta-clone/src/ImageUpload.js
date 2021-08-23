@@ -66,9 +66,10 @@ function ImageUpload({username}) {
             <input className='imageupload__input' type='text' placeholder='What happened there ?' 
             onChange={event => setCaption(event.target.value)} value={caption}> 
             </input>
+            
             <input className="upload__btn" type='file' onChange={handleChange}></input>
             <Button className='imageupload__button' name='imageupload__button' onClick={handleUpload}>
-                Upload
+                <span class='upload__button'>Upload</span>
             </Button>
         </div>
         </>
