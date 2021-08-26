@@ -60,7 +60,7 @@ function ImageUpload({username}) {
 
     return (
         <>
-        <br></br><br></br><br></br><br></br><br></br>
+        <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
         <div className="imageupload">
             <progress className='imageupload__progress' value={progress} max="100"></progress>
             <input className='imageupload__input' type='text' placeholder='What happened there ?' 
@@ -68,7 +68,7 @@ function ImageUpload({username}) {
             </input>
             
             <input className="upload__btn" type='file' onChange={handleChange}></input>
-            <Button className='imageupload__button' name='imageupload__button' onClick={handleUpload}>
+            <Button className='imageupload__button' name='imageupload__button' onClick={handleUpload} disabled={!image}>
                 <span class='upload__button'>Upload</span>
             </Button>
         </div>

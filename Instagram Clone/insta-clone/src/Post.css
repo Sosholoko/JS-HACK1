@@ -10,8 +10,8 @@
 .post__img{
     width: 100%;
     object-fit: contain;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
+    /* border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray; */
 }
 .post__text{
     font-weight: normal;
@@ -25,12 +25,18 @@
 .post__header{
     display: flex;
     align-items: center;
+    /* width: 100%; */
     padding: 5px;
-    /* justify-content: space-between; */
+    justify-content: space-between; 
 }
 
 .post__avatar{
     margin-right: 10px;
+}
+
+#post__likes{
+    margin-top: 8px;
+    margin-left: 15px;
 }
 
 .post__commentBox{
@@ -39,7 +45,7 @@
 }
 
 .post__input{
-    flex: 5;
+    flex: 7;
     border: none;
     padding: 10px;
     font-size: 17px;
@@ -68,7 +74,8 @@
 #dots{
     font-size: 30px;
     float: right;
-    margin-left: 60%;
+    /* margin-left: 60%; */
+    margin-right: 10px;
     margin-bottom: 15px;
 }
 
@@ -77,6 +84,14 @@
     color: rgb(0, 0, 0);
     font-weight: lighter;
 }
+
+.redHeart{
+    color: red;
+}
+.norHeart{
+    color: black;
+}
+
 .fa-paper-plane{
     margin-left: 18px;
     font-weight: lighter;
@@ -103,4 +118,12 @@
 
 .post__header h2{
     font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#comm_count{
+    padding-left: 15px;
+    padding-top: 5px;
+    opacity: 40%;
 }

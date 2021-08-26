@@ -2,7 +2,8 @@
 import './App.css';
 import Post from './Post';
 import React, {useState, useEffect} from 'react';
-import {db, auth, storage} from './Firebase';
+import Avatar from '@material-ui/core/Avatar';
+import {db, auth} from './Firebase';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button, Input } from '@material-ui/core';
@@ -41,12 +42,17 @@ function App() {
   const [modalStyle] = useState(getModalStyle);
 
   const [posts, setPosts] = useState([]);
+
   const [open, setOpen] = useState(false);
   const [openSignIn, setOpenSignIn] = useState(false);
+  const [signout, setSignOut] = useState(false);
+
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [user, setUser] = useState(null);
+
+  const [button, setButton] = useState(false);
 
   useEffect(()=>{
     const unsubscribe = auth.onAuthStateChanged((authUser)=>{
@@ -104,12 +110,12 @@ function App() {
       setOpenSignIn(false);
     }
 
+    function goTop(){
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
   return (
     <div className="App">
-
-      
-      
-
       <Modal
         open={open}
         onClose={()=> setOpen(false)}
@@ -119,7 +125,7 @@ function App() {
           <center>
           <img className="app__headerImage" 
             src="famigram5.png"alt="" 
-            height='70px'width='180px' alt=""
+            height='70px'width='180px'
             />
           </center>
             <Input 
@@ -141,7 +147,7 @@ function App() {
             onChange={(e)=> setPassword(e.target.value)}
             />
             
-            <Button className='signup__btn' onClick={signUp}>Sign Up</Button>
+            <Button className='signup__btn' onClick={signUp}><span id='su__btn'>Sign Up</span></Button>
               
           </form>
         </div>
@@ -149,14 +155,14 @@ function App() {
 
       <Modal
         open={openSignIn}
-        onClose={()=> setOpen(false)}
+        onClose={()=> setOpenSignIn(false)}
       >
         <div style={modalStyle} className={classes.paper}>
         <form className='app__signup'>
           <center>
           <img className="app__headerImage" 
             src="famigram5.png"alt="" 
-            height='70px'width='180px' alt=""
+            height='70px'width='180px'
             />
           </center>
             <Input 
@@ -172,51 +178,112 @@ function App() {
             onChange={(e)=> setPassword(e.target.value)}
             />
             
-            <Button className='signin__btn' onClick={signIn}>Sign In</Button>
+            <Button className='signin__btn' onClick={signIn}><span id="si__btn">Sign In</span></Button>
               
           </form>
         </div>
       </Modal>
 
+      <Modal
+        open={signout}
+        onClose={()=> setSignOut(false)}
+      >
+        <div style={modalStyle} className={classes.paper}>
+        <form className='app__signup'>
+          <center>
+          {/* <img className="app__headerImage" 
+            src="famigram5.png"alt="" 
+            height='70px'width='180px'
+            /> */}
+          </center>
+            
+            <div className='so__btn'>
+              <p><i class="fas fa-exclamation-triangle"></i> Are you sure you want to log out ? </p><br></br><br></br>
+            <button onClick={() => auth.signOut()}>Yes</button><button onClick={() => setSignOut(false)} id='so__btn_no'>No</button>
+            </div>
+          </form>
+        </div>
+      </Modal>
+
+      {/* App header */}
+      
 
       <div className='app__header'>
         {/* <img className="app__headerImage" src="famigram5.png"alt="" height='60px'width='200px'/> */}
         
         {user ? (
           <div className="logged">
-            <span id='userN'>{user.displayName}</span> <img className="app__headerImage" src="famigram5.png"alt="" height='40px'width='150px'/><Button  onClick={() => auth.signOut()}><span className='btn__logout'>Log Out</span></Button>
+            <button id='userN' onClick={() => {setButton(true); goTop();}}><i class="fas fa-user"></i> {user.displayName}</button> <img className="app__headerImage" src="famigram5.png"alt="" height='40px'width='150px'/><Button  onClick={() => setSignOut(true)}><span className='btn__logout'>Log Out</span></Button>
           </div>
       ): (
         <div className='app__loginContainer'>
-          <img className="app__headerImage" src="famigram5.png"alt="" height='60px'width='170px'/>
-          <Button className='app__btn-login' onClick={() => setOpenSignIn(true)}>Sign In</Button>
-          <Button onClick={() => setOpen(true)}>Sign Up</Button>
+          <img className="app__headerImage2" src="famigram5.png"alt="" height='60px'width='170px'/>
+          {/* <Button className='app__btn-login' onClick={() => setOpenSignIn(true)}>Sign In</Button>
+          <Button onClick={() => setOpen(true)}>Sign Up</Button> */}
         </div>
       )}
       </div>
-      
-      
+      <br></br><br></br><br></br><br></br><br></br>
+      {button ?(
+        <>
+        
+        <div className='button_txt'>
+          <div className='first__p'>
+          {/* <img src='sasha.jpg' height="90px" width='90px' alt=''></img> */}
+          <Avatar className='app__avatar' alt={user.displayName} src='#'/>
+          <p>{user.displayName} <i class="fas fa-certificate"></i></p>
+          <button onClick={()=> setButton(false)}>Back ←</button>
+        </div>
+        <p id='first_mail'>{user.email}</p><br/>
+        <div className='counter_n'>
+          <p>{(posts.length)}</p><p>0</p><p>0</p>
+        </div>
+        <div className='counter_p'>
+          <p>posts</p><p>followers</p><p>following</p>
+        </div>
+        <div className='img__tiles'>
+          <img src='js.png' height='120px' width='120px' alt=''></img>
+          <img src='react.png' height='120px'width='120px'alt=''></img>
+          <img src='insta2.png' height='120px'width='120px'alt=''></img>
+          <img src='john.jpg' height='120px'width='120px'alt=''></img>
+          <img src='jimh.jpg' height='120px'width='120px'alt=''></img>
+          <img src='mark.jpg' height='120px'width='120px'alt=''></img>
+          <i class="fas fa-camera"></i>
+        </div>
+        
+        
+        </div>
+        </>
+      ):(
+        <div></div>
+      )}
 
-      {/* header*/}
+      {/*Story*/}
       
       {user ? (
         <>
-      <br></br><br></br><br></br><br></br><br></br>
       <div className='app__story'>
-        <p><img src='jimh.jpg' height='50px' width='50px'>
-        </img><br/>jimHalp</p><p id='prostory'>
-        <img src='sasha.jpg' height='50px' width='50px'></img><br/>{user.displayName}</p><p>
-        <img src='john.jpg' height='50px' width='50px'></img><br/>JohnDD</p><p>
-        <img src='mark.jpg' height='50px' width='50px'></img><br/>Mark1878</p><p>
-        <img src='sarah.jpg' height='50px' width='50px'></img><br/>Sarah77</p><p>
-        <img src='omer.jpg' height='50px' width='50px'></img><br/>omerAda</p>
+      <div className="app__storyindi">
+        <p id='prostory'>
+        <img src='sasha.jpg' height='60px' width='60px' alt=''></img><br/>{user.displayName}</p><p>
+        <img src='jimh.jpg' height='50px' width='50px' alt=''></img><br/>jimHalp</p><p>
+        <img src='john.jpg' height='50px' width='50px' alt=''></img><br/>JohnDD</p><p>
+        <img src='mark.jpg' height='50px' width='50px' alt=''></img><br/>Mark1878</p><p>
+        <img src='sarah.jpg' height='50px' width='50px' alt=''></img><br/>Sarah77</p><p>
+        <img src='omer.jpg' height='50px' width='50px' alt=''></img><br/>omerAda</p>
+        </div>
       </div>
       </>
       ) :(
         <div>
-{/* <p><img src='adar.jpg' height='60px' width='60px'></img><br/>adarH</p> */}
+
         </div>
       )}
+      
+      
+
+        {/* Welcome section */}
+
       {user ? (
         <div className="app__welcome">
           <h2><span>Welcome back</span> {user.displayName} 😉</h2>
@@ -227,7 +294,8 @@ function App() {
         </div>
       )}<br></br><br></br>
 
-
+        {/* Post section/Login Signup page */}
+          {/* Nested ternary operator to compare */}
       {user? (
           <div className='app__posts'>
             {
@@ -238,25 +306,23 @@ function App() {
       </div>
       ):(
         <div className='app__welpage'>
-        <center><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-          <h1>Welcome to </h1><img src='famigramw.png' height='60px' width='150px'></img><br></br><br></br>
-          <h3><br/><button className='signin__btn' onClick={() => setOpenSignIn(true)}>Sign in</button><br/><br/>OR<br/><br/><button onClick={() => setOpen(true)}>Sign up</button></h3>
+        <center><br></br><br></br><br></br><br></br><br></br><br></br>
+          <h1>Welcome to </h1><br/><img src='famigramw.png' height='60px' width='150px' alt=''></img><br/><br/><h3>social network</h3><br></br><br></br><br></br><br></br>
+          <h3><br/><button className='signin__btn' onClick={() => setOpenSignIn(true)}>Connect →</button><br/><br/>OR<br/><br/><button onClick={() => setOpen(true)}>Create Account →</button></h3>
         </center>
         </div>
       )}
       
+      
 
       
       
-      {user?.displayName ? (
+      {user?.displayName ?(
         <ImageUpload username={user.displayName}/>
       ): (
         // <h3>Sorry you need to log in to upload...</h3>
         <div></div>
       )}
-      {/* Posts*/}
-      
-      {/* Posts*/}
     </div>
   );
 }
