@@ -132,17 +132,20 @@ function App() {
             placeholder="Username"
             type="text"
             value={username}
+            disableUnderline = 'true'
             onChange={(e)=> setUsername(e.target.value)}
             />
             <Input 
             placeholder="Email"
             type="text"
             value={email}
+            disableUnderline = 'true'
             onChange={(e)=> setEmail(e.target.value)}
             />
             <Input 
             placeholder="Password"
             type="password"
+            disableUnderline = 'true'
             value={password}
             onChange={(e)=> setPassword(e.target.value)}
             />
@@ -169,11 +172,13 @@ function App() {
             placeholder="Email"
             type="text"
             value={email}
+            disableUnderline = 'true'
             onChange={(e)=> setEmail(e.target.value)}
             />
             <Input 
             placeholder="Password"
             type="password"
+            disableUnderline = 'true'
             value={password}
             onChange={(e)=> setPassword(e.target.value)}
             />
@@ -223,10 +228,9 @@ function App() {
         </div>
       )}
       </div>
-      <br></br><br></br><br></br><br></br><br></br>
+      {/* <br></br><br></br><br></br><br></br><br></br> */}
       {button ?(
         <>
-        
         <div className='button_txt'>
           <div className='first__p'>
           {/* <img src='sasha.jpg' height="90px" width='90px' alt=''></img> */}

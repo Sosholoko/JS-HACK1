@@ -1,6 +1,25 @@
 *{
   margin:0;
 }
+body{
+  /* overflow: hidden; */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll; 
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  display: none;
+}
+
 .App{
   background-color: white;
   height: 100vh;
@@ -78,6 +97,19 @@
   font-weight: bolder;
 } */
 
+.app__signup Input{
+  border: 1px solid gray;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  /* padding-left: 5px; */
+  text-align: center;
+}
+
+.app__signup img{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #userN{
   /* margin-right: 10%; */
   margin-left: 15px;
@@ -97,7 +129,7 @@
   height: 580px;
   width: 100%;
   border: .5px solid rgb(63, 63, 63);
-  margin-top: 10px;
+  margin-top: 100px;
 }
 
 .first__p{
@@ -209,8 +241,11 @@
 .logged{
   display: flex;
   width: 100%;
+  /* height: 60px; */
   justify-content: space-between;
   margin-top: 15px;
+  /* border-bottom: 1px solid gray; */
+
 }
 
 .logged img{
@@ -248,6 +283,7 @@
   border: 1px solid lightgray;
   padding-bottom: 8px;
   padding-top: 35px ;
+  margin-top: 90px;
   overflow-y: scroll;
 }
 .app__storyindi{
