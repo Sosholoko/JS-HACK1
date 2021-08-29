@@ -53,6 +53,8 @@ function App() {
   const [user, setUser] = useState(null);
 
   const [button, setButton] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
 
   useEffect(()=>{
     const unsubscribe = auth.onAuthStateChanged((authUser)=>{
@@ -114,8 +116,15 @@ function App() {
       window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
+
+    const toggleDarkMode = () => setDarkMode(darkMode ? false : true);
+
+
+
+
+
   return (
-    <div className="App">
+    <div className="App" data-theme={darkMode ? "dark" : "light"}>
       <Modal
         open={open}
         onClose={()=> setOpen(false)}
@@ -132,20 +141,20 @@ function App() {
             placeholder="Username"
             type="text"
             value={username}
-            disableUnderline = 'true'
+            disableUnderline = "true"
             onChange={(e)=> setUsername(e.target.value)}
             />
             <Input 
             placeholder="Email"
             type="text"
             value={email}
-            disableUnderline = 'true'
+            disableUnderline = "true"
             onChange={(e)=> setEmail(e.target.value)}
             />
             <Input 
             placeholder="Password"
             type="password"
-            disableUnderline = 'true'
+            disableUnderline = "true"
             value={password}
             onChange={(e)=> setPassword(e.target.value)}
             />
@@ -172,13 +181,13 @@ function App() {
             placeholder="Email"
             type="text"
             value={email}
-            disableUnderline = 'true'
+            disableUnderline = "true"
             onChange={(e)=> setEmail(e.target.value)}
             />
             <Input 
             placeholder="Password"
             type="password"
-            disableUnderline = 'true'
+            disableUnderline = "true"
             value={password}
             onChange={(e)=> setPassword(e.target.value)}
             />
@@ -238,7 +247,7 @@ function App() {
           <p>{user.displayName} <i class="fas fa-certificate"></i></p>
           <button onClick={()=> setButton(false)}>Back ←</button>
         </div>
-        <p id='first_mail'>{user.email}</p><br/>
+        <p id='first_mail'>{user.email}</p><button id='app__btn__drk' onClick={toggleDarkMode}>Dark Mode ☾</button><br/>
         <div className='counter_n'>
           <p>{(posts.length)}</p><p>0</p><p>0</p>
         </div>
@@ -304,7 +313,7 @@ function App() {
           <div className='app__posts'>
             {
               posts.map(({id, post}) =>(
-                <Post key={id} postId={id} user={user} username ={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
+                <Post key={id} postId={id} user={user} username ={post.username} caption={post.caption} imageUrl={post.imageUrl} darkMode={darkMode} setDarkMode={setDarkMode}/>
               ))
             }
       </div>
@@ -322,10 +331,11 @@ function App() {
       
       
       {user?.displayName ?(
-        <ImageUpload username={user.displayName}/>
+        <ImageUpload username={user.displayName} darkMode={darkMode} setDarkMode={setDarkMode}/>
       ): (
         // <h3>Sorry you need to log in to upload...</h3>
-        <div></div>
+        <>
+        </>
       )}
     </div>
   );

@@ -1,6 +1,19 @@
 *{
   margin:0;
 }
+
+:root {
+  --bkg-color: white;
+  --font-color: black;
+  --filter: none;
+}
+
+[data-theme="dark"] {
+  --bkg-color: black;
+  --font-color: white;
+  --filter: invert(100%);
+}
+
 body{
   /* overflow: hidden; */
   scrollbar-width: none; /* Firefox */
@@ -21,7 +34,7 @@ body::-webkit-scrollbar{
 }
 
 .App{
-  background-color: white;
+  background-color: var(--bkg-color);
   height: 100vh;
 }
 .app__header{
@@ -29,7 +42,7 @@ body::-webkit-scrollbar{
   top: 0;
   width: 100%;
   z-index: 1;
-  background-color: white;
+  background-color: var(--bkg-color);
   padding: 15px;
   padding-left: 0;
   object-fit: contain;
@@ -53,7 +66,7 @@ body::-webkit-scrollbar{
   border: 1px solid black;
   border-radius: 8px;
   background-color: transparent;
-  color: black;
+  color: var(--font-color);
   width: 80px;
   margin-right: 20px;
   margin-left: 20px;
@@ -118,11 +131,23 @@ body::-webkit-scrollbar{
   height: 35px;
   margin-bottom: 20px;
   font-size: 12px;
-  border: 1px solid black;
+  border: 1px solid var(--font-color);
+  color: var(--font-color);
   text-align: center;
   border-radius: 10px;
   padding: 8px;
   width: 90px;
+}
+
+#app__btn__drk{
+  width: 100px;
+  background-color: rgb(0, 110, 255);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  margin-left: 25px;
+  margin-top: 5px;
 }
 
 .button_txt{
@@ -141,7 +166,7 @@ body::-webkit-scrollbar{
   margin-top: 10px;
   margin-left: 10px;
   border-radius: 50%;
-  border: .5px solid black;
+  border: .5px solid var(--font-color);
 }
 .first__p p{
   margin-left: 10%;
@@ -151,9 +176,9 @@ body::-webkit-scrollbar{
   height: 30px;
   justify-content: right;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 1px solid var(--font-color);
   background-color: transparent;
-  color: black;
+  color: var(--font-color);
   margin-top: 45px;
   margin-left: 12%;
 }
@@ -175,7 +200,7 @@ body::-webkit-scrollbar{
   margin-right: 18px;
   font-size: 10px;
   font-weight: normal;
-  color: rgb(0, 0, 0);
+  color: var(--font-color);
 }
 .counter_p{
   padding-bottom: 10px;
@@ -199,7 +224,7 @@ body::-webkit-scrollbar{
 .button_txt p{
   font-size: 20px;
   text-align: center;
-  color: black;
+  color: var(--font-color);
 }
 
 .btn__logout{
@@ -264,6 +289,7 @@ body::-webkit-scrollbar{
 
 .app__welcome h2{
   margin-top: 25px;
+  color: var(--font-color);
   text-align: center;
 }
 .app__welcome span{
@@ -274,13 +300,14 @@ body::-webkit-scrollbar{
   object-fit: contain;
   margin-right: 25px;
   margin-bottom: 20px;
-  color: black;
+  filter: var(--filter);
 }
 
 .app__story{
   display: flex;
   justify-content: space-around;
-  border: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
   padding-bottom: 8px;
   padding-top: 35px ;
   margin-top: 90px;
@@ -293,6 +320,7 @@ body::-webkit-scrollbar{
 .app__story p{
   font-size: 10px;
   margin-left: 20px;
+  color: var(--font-color);
 } 
 .app__story img{
   border-radius: 50%;
@@ -310,6 +338,7 @@ body::-webkit-scrollbar{
 
 .app__posts{
   padding: 0px;
+  background-color: var(--bkg-color);
 }
 
 .app__signup{
@@ -335,7 +364,7 @@ body::-webkit-scrollbar{
   border-radius: 15px;
   padding: 13px;
   background-color: white;
-  color: black;
+  color: var(--font-color);
   font-size: 22px;
   font-weight: lighter;
 }

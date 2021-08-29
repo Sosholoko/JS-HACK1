@@ -4,7 +4,7 @@ import {Button} from "@material-ui/core";
 import {db, storage} from './Firebase';
 import './ImageUpload.css';
 
-function ImageUpload({username}) {
+function ImageUpload({username, darkMode, setDarkMode}) {
     const [caption, setCaption] = useState('');
     //const [url, setUrl] = useState('');
     const [progress, setProgress] = useState(0);
@@ -61,7 +61,7 @@ function ImageUpload({username}) {
     return (
         <>
         <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-        <div className="imageupload">
+        <div className="imageupload" data-theme={darkMode ? "dark" : "light"}>
             <progress className='imageupload__progress' value={progress} max="100"></progress>
             <input className='imageupload__input' type='text' placeholder='What happened there ?' 
             onChange={event => setCaption(event.target.value)} value={caption}> 

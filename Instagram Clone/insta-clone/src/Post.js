@@ -4,7 +4,7 @@ import Avatar from '@material-ui/core/Avatar';
 import firebase from 'firebase';
 import {db} from './Firebase';
 
-function Post({postId, user, username, caption, imageUrl}){
+function Post({postId, user, username, caption, imageUrl, darkMode, setDarkMode}){
 const [comments, setComments]= useState([]); 
 const [comment, setComment]= useState([]);
 const [counter, setCounter] = useState(0);
@@ -77,7 +77,7 @@ useEffect(() => {
     // let userN = typeof username
 
     return (
-        <div className='post'>
+        <div className='post' data-theme={darkMode ? "dark" : "light"}>
             <div className='post__header'>
                 <h2><Avatar className='post__avatar' alt={username} src='#'/>{username}</h2>
                 <p id='dots'>...</p>
