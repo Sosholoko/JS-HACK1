@@ -247,7 +247,7 @@ function App() {
           <p>{user.displayName} <i class="fas fa-certificate"></i></p>
           <button onClick={()=> setButton(false)}>Back ←</button>
         </div>
-        <p id='first_mail'>{user.email}</p><button id='app__btn__drk' onClick={toggleDarkMode}>Dark Mode ☾</button><br/>
+        <p id='first_mail'>{user.email}</p><button id='app__btn__drk' onClick={toggleDarkMode}>Dark Mode <span id='moon'>☾</span></button><br/>
         <div className='counter_n'>
           <p>{(posts.length)}</p><p>0</p><p>0</p>
         </div>

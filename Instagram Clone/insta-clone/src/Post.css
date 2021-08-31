@@ -112,6 +112,9 @@
 .norHeart{
     color: black;
 }
+.blueComm{
+    color: rgb(49, 124, 245);
+}
 
 .fa-paper-plane{
     margin-left: 18px;
@@ -150,4 +153,36 @@
     opacity: 40%;
     font-size: 13px;
     color: var(--font-color);
+}
+
+.post__sharebtn FacebookIcon{
+    margin-right: 10px;
+}
+
+#fb-icon, #tw-icon, #tg-icon, #rd-icon{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#ok__btn{
+    padding: 10px;
+    width: 100px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+}
+
+#post__warning{
+    font-size: 35px;
+    color: red;
+}
+
+#post__cancel{
+    padding: 10px;
+    width: 70px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
 }
