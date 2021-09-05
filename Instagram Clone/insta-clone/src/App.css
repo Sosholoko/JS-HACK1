@@ -48,7 +48,7 @@ body::-webkit-scrollbar{
   padding: 15px;
   padding-left: 0;
   object-fit: contain;
-  border-bottom: 1px solid lightgray;
+  /* border-bottom: 1px solid lightgray; */
   display: flex;
   justify-content: space-between;
 }
@@ -207,7 +207,7 @@ body::-webkit-scrollbar{
   margin-top: 20px;
   display: flex;
   justify-content: space-around;
-  border-top: .5px solid gray;
+  /* border-top: .5px solid gray; */
 }
 .counter_n p{
   margin-right: 18px;
@@ -219,12 +219,17 @@ body::-webkit-scrollbar{
   padding-bottom: 10px;
   font-weight: normal;
   display: flex;
-  border-bottom: .5px solid gray;
+  /* border-bottom: .5px solid gray; */
   justify-content: space-around;
   font-size: 10px;
 }
 .counter_p p{
   margin-left: 10px;
+  font-weight: lighter;
+  color: black;
+}
+#fling-count{
+  /* margin-left: 50px; */
 }
 
 #first_mail{
@@ -320,7 +325,7 @@ body::-webkit-scrollbar{
   display: flex;
   justify-content: space-around;
   border-top: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
+  /* border-bottom: 1px solid lightgray; */
   padding-bottom: 8px;
   padding-top: 35px ;
   margin-top: 90px;
@@ -328,6 +333,21 @@ body::-webkit-scrollbar{
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;
   scrollbar-width: none; /* for Firefox */ 
+}
+
+#story__plus{
+  position: relative;
+  left: 10px;
+  padding: 5px;
+  border: .5px solid black;
+  border-radius: 50%;
+}
+
+.fa-plus-circle{
+  position: relative;
+  bottom: 15px;
+  color: black;
+  font-size: 20px;
 }
 
 .app__story::-webkit-scrollbar{
@@ -401,7 +421,8 @@ body::-webkit-scrollbar{
   margin-left: auto;
   margin-right: auto;
   margin-top: 5px;
-  border: 1px solid gray;
+  border: .5px solid gray;
+  border-radius: 10px;
 }
 
 .first__p .MuiAvatar-root{

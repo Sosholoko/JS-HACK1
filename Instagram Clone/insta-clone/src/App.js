@@ -249,7 +249,7 @@ function App() {
         </div>
         <p id='first_mail'>{user.email}</p><button id='app__btn__drk' onClick={toggleDarkMode}>Dark Mode <span id='moon'>☾</span></button><br/>
         <div className='counter_n'>
-          <p>{(posts.length)}</p><p>0</p><p>0</p>
+          <p>{(posts.length)}</p><p>0</p><p id='fling-count'>0</p>
         </div>
         <div className='counter_p'>
           <p>posts</p><p>followers</p><p>following</p>
@@ -278,7 +278,7 @@ function App() {
       <div className='app__story'>
       <div className="app__storyindi">
         <p id='prostory'>
-        <img src='sasha.jpg' height='60px' width='60px' alt=''></img><br/>{user.displayName}</p><p>
+        <img src='sasha.jpg' height='60px' width='60px' alt=''></img><br/>{user.displayName}<i class="fas fa-plus-circle"></i></p><p>
         <img src='jimh.jpg' height='50px' width='50px' alt=''></img><br/>jimHalp</p><p>
         <img src='john.jpg' height='50px' width='50px' alt=''></img><br/>JohnDD</p><p>
         <img src='mark.jpg' height='50px' width='50px' alt=''></img><br/>Mark1878</p><p>

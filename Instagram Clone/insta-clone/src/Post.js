@@ -130,7 +130,7 @@ useEffect(() => {
         <div style={modalStyle} className={classes.paper}>
         <form className='post__share'>
         <center>
-            <h3>Share your post on your<br/> Social Medias</h3><br></br><br></br>
+            <h3>Share your post on your<br/> social medias</h3><br></br><br></br>
         <div className='post__sharebtn'>
         <FacebookShareButton
         url={"https://google.com"}
@@ -177,7 +177,7 @@ useEffect(() => {
             <div style={modalStyle} className={classes.paper}>
             <form className='post__empty'>
             <center>
-                <h3><span id='post__warning'>⚠︎</span><br/>A comment needs to contain at least two characters.</h3><br></br><br/>
+                <h3><span id='post__warning'>⚠︎</span><br/>A comment needs to be at least two characters.</h3><br></br><br/>
                 <button id='ok__btn' onClick={()=>setEmptyCom(false)}>OK</button>
             </center>
             </form>
