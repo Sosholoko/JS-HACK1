@@ -60,7 +60,7 @@ body::-webkit-scrollbar{
 }
 .so__btn p{
   font-size: 20px;
-  font-weight: normal;
+  font-weight: bolder;
 }
 .so__btn button{
   padding: 8px;
@@ -99,18 +99,6 @@ body::-webkit-scrollbar{
   color: white;
   font-weight: bolder;
 }
-
-/* #si__btn{
-  margin-top: 10px;
-  border: none;
-  width: 200px;
-  height: 30px;
-  padding-top: 5px;
-  border-radius: 10px;
-  background-color: rgb(38, 174, 253);
-  color: white;
-  font-weight: bolder;
-} */
 
 .app__signup Input{
   border: 1px solid gray;
@@ -159,12 +147,13 @@ body::-webkit-scrollbar{
   animation: 1s ease-in;
   transition: 1s;
 }
+
 #moon{
   color: var(--moon);
 }
 
 .button_txt{
-  height: 580px;
+  height: 620px;
   width: 100%;
   border: .5px solid rgb(63, 63, 63);
   margin-top: 100px;
@@ -202,6 +191,12 @@ body::-webkit-scrollbar{
   margin-bottom: 10px;
 }
 
+.so__btn .fa-exclamation-triangle{
+  color: rgb(228, 72, 72);
+  border-bottom: 0px;
+  font-size: 25px;
+}
+
 .counter_n{
   padding-top: 10px;
   margin-top: 20px;
@@ -226,10 +221,15 @@ body::-webkit-scrollbar{
 .counter_p p{
   margin-left: 10px;
   font-weight: lighter;
-  color: black;
+  color: rgb(0, 0, 0);
 }
-#fling-count{
+/* #fling-count{
   /* margin-left: 50px; */
+
+
+#post__counter{
+  text-align: center;
+  font-weight: lighter;
 }
 
 #first_mail{

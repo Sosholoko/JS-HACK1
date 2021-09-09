@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     width: 280,
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    border: '1px solid #000',
     borderRadius: '15px',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
@@ -212,7 +212,7 @@ function App() {
           </center>
             
             <div className='so__btn'>
-              <p><i class="fas fa-exclamation-triangle"></i> Are you sure you want to log out ? </p><br></br><br></br>
+              <p><i class="fas fa-exclamation-triangle"></i> <br/><br/>Are you sure you want to log out ? </p><br></br><br></br>
             <button onClick={() => auth.signOut()}>Yes</button><button onClick={() => setSignOut(false)} id='so__btn_no'>No</button>
             </div>
           </form>
@@ -253,7 +253,8 @@ function App() {
         </div>
         <div className='counter_p'>
           <p>posts</p><p>followers</p><p>following</p>
-        </div>
+        </div><br/>
+        <h3 id='post__counter'>your posts ↓</h3>
         <div className='img__tiles'>
           <img src='js.png' height='120px' width='120px' alt=''></img>
           <img src='react.png' height='120px'width='120px'alt=''></img>

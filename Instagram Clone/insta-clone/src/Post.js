@@ -145,7 +145,7 @@ useEffect(() => {
         <TwitterShareButton
         title={"Check out my new post on Familygram"}
         url={"https://google.com"}
-        hashtags={["famimygram", "new post"]}
+        hashtags={["familygram", "new post"]}
         >
         <TwitterIcon size={45} round={true} id='tw-icon' />
         </TwitterShareButton>
