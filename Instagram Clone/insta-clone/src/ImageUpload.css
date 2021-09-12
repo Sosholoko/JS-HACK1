@@ -2,12 +2,14 @@
     --bkg-color: rgb(247, 247, 247);
     --font-color: black;
     --filter: none;
+    --box-shadow: rgba(0,0,0,0.37);
   }
   
   [data-theme="dark"] {
     --bkg-color: black;
     --font-color: white;
     --filter: invert(100%);
+    --box-shadow: rgba(146, 146, 146, 0.37);
   }
 
 
@@ -65,11 +67,16 @@
 
 .upload__button{
     color: var(--font-color);
-    border: 1px solid var(--font-color);
-    padding: 7px;
-    border-radius: 10px;
+    border: .5px solid transparent;
+    padding: 5px;
+    color: white;
+    border-radius: 15px;
     position: relative;
-    bottom: 10px;
+    top: 30px;
+    right: 40px;
+    bottom: 0px;
+    width: 333px;
+    background-color: rgb(72, 157, 255);
 }
 
 .upload__btn{
@@ -145,39 +152,75 @@ input[type="file"]{
 
 .imageupload__progress{
     /* border: .5px solid black; */
-    width: 60%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
 
-#plus__btn{
-    font-size: 15px;
-    margin-right: auto;
-    margin-left: 43.5%;
+/* #plus__btn{
+    font-size: 15px; */
+    /* margin-right: auto; */
+    /* margin-left: 0px;
     margin-top: 10px;
-    border-radius: 10px;
-    width: 49px;
-    height: 40px;
+    border-radius: 10px; */
+    /* width: 49px;
+    height: 40px; */
     /* border: 1px solid rgb(148, 147, 147); */
+    /* border: none; */
+    /* background-color: var(--bkg-color);
+    -webkit-box-shadow: -1px 15px 17px 5px var(--box-shadow); 
+    box-shadow: -1px 15px 17px 5px var(--box-shadow);
+} */
+
+#id__btn, #lo__btn{
     border: none;
+    font-size: 25px;
     background-color: transparent;
-    -webkit-box-shadow: -1px 15px 17px 5px rgba(0,0,0,0.37); 
-    box-shadow: -1px 15px 17px 5px rgba(0,0,0,0.37);
-
+    margin-top: 5px;
 }
 
-.img__up__ .fa-plus-circle{
-    margin-top: 23px;
+#plus__btn{
+    position: relative;
+    bottom: 15px;
+    background: linear-gradient(rgb(255, 166, 0), rgb(238, 13, 107));
+    margin-top: 0px;
+    font-size: 0px;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+}
+
+#plus__sign{
+    position: relative;
+    bottom: 4px;
+    margin-bottom: 30px;
+    color: white;
+    margin-left: 1px;
+    font-size: 40px;
+}
+
+#plus__btn .fa-plus-circle{
+    font-size: 24px;
+}
+
+/* .img__up__ .fa-plus-circle{
+    margin-top: 28px;
     font-size: 20px;
-    color: black;
-}
+    color: var(--font-color);
+} */
 
 .imageuploade__input{
-    font-size: 20px;
+    font-size: 15px;
     border: .5px solid rgb(141, 141, 141);
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 5px;
+    width: 250px;
     text-align: center;
+}
+
+.imageuploade__input:focus{
+    outline: none;
 }
 
 
@@ -186,7 +229,16 @@ input[type="file"]{
     border: .5px solid black;
     background-color: transparent;
     color: black;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 8px;
     margin-bottom: 20px;
+}
+
+.img__up__{
+    display: flex;
+    justify-content: space-around;
+}
+
+.img__up__ .fa-user-circle, .fa-plus-circle, .fa-home{
+    color: var(--font-color);
 }

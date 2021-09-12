@@ -22,7 +22,6 @@ function getModalStyle() {
         position: 'absolute',
         width: 280,
         backgroundColor: theme.palette.background.paper,
-        border: '2px solid #000',
         borderRadius: '15px',
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
@@ -33,7 +32,7 @@ function getModalStyle() {
 
 
 
-function ImageUpload({username, darkMode, setDarkMode}) {
+function ImageUpload({username, darkMode, setDarkMode, button, setButton}) {
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
     const [caption, setCaption] = useState('');
@@ -89,11 +88,16 @@ function ImageUpload({username, darkMode, setDarkMode}) {
         )
     }
 
+    function goTop(){
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+
 // FINAL RESULT OF THE COMPONENT
 
     return (
         <>
-        <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+        <br></br>
         <div className="imageupload" data-theme={darkMode ? "dark" : "light"}>
 
             <Modal
@@ -103,15 +107,16 @@ function ImageUpload({username, darkMode, setDarkMode}) {
             <div style={modalStyle} className={classes.paper}>
             <form className='image__upload'>
             <center>
-                <h2>Upload your picture !</h2><br/>
+                <h2>Upload your picture !</h2><br/><br/>
                 <input className="uploade__btn" type='file' onChange={handleChange}></input><br/>
                 <input className='imageuploade__input' type='text' placeholder='What happened there ?' 
                 onChange={event => setCaption(event.target.value)} value={caption}> 
                 </input><br/><br/>
+                <progress className='imageupload__progress' value={progress} max="100"></progress><br/>
                 <Button className='imageupload__button' name='imageupload__button' onClick={handleUpload} disabled={!image}>
-                <span class='upload__button'>Upload</span>
-                </Button><br/>
-                <progress className='imageupload__progress' value={progress} max="100"></progress>
+                <span class='upload__button'>Upload <i class="fas fa-arrow-circle-up"></i></span>
+                </Button>
+                
             </center>
             </form>
             </div>
@@ -122,12 +127,14 @@ function ImageUpload({username, darkMode, setDarkMode}) {
             <input className='imageupload__input' type='text' placeholder='What happened there ?' 
             onChange={event => setCaption(event.target.value)} value={caption}> 
             </input> */}
-            
+            <button id='lo__btn' onClick= {()=> {setButton(false); goTop();}}><i class="fas fa-home"></i></button>
             {/* <input className="upload__btn" type='file' onChange={handleChange}></input> */}
-            <button id='plus__btn' onClick={()=> setUploadModal(true)}><i class="fas fa-plus-circle"></i></button>
+            <button id='plus__btn' onClick={()=> setUploadModal(true)}><span id='plus__sign'>+</span></button>
             {/* <Button className='imageupload__button' name='imageupload__button' onClick={handleUpload} disabled={!image}>
                 <span class='upload__button'>Upload</span>
             </Button> */}
+            <button id= 'id__btn' onClick = {() => {setButton(true); goTop();}}><i class="far fa-user-circle"></i></button>
+            
             </div>
             
         </div>

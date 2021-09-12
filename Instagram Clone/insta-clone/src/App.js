@@ -332,7 +332,7 @@ function App() {
       
       
       {user?.displayName ?(
-        <ImageUpload username={user.displayName} darkMode={darkMode} setDarkMode={setDarkMode}/>
+        <ImageUpload username={user.displayName} darkMode={darkMode} setDarkMode={setDarkMode} button={button} setButton={setButton}/>
       ): (
         // <h3>Sorry you need to log in to upload...</h3>
         <>
