@@ -178,24 +178,24 @@ input[type="file"]{
     border: none;
     font-size: 25px;
     background-color: transparent;
-    margin-top: 5px;
+    margin-top: 0px;
 }
 
 #plus__btn{
     position: relative;
-    bottom: 15px;
+    bottom: 18px;
     background: linear-gradient(rgb(255, 166, 0), rgb(238, 13, 107));
     margin-top: 0px;
     font-size: 0px;
     border: 1px solid white;
     border-radius: 50%;
-    width: 52px;
-    height: 52px;
+    width: 62px;
+    height: 62px;
 }
 
 #plus__sign{
     position: relative;
-    bottom: 4px;
+    bottom: 3px;
     margin-bottom: 30px;
     color: white;
     margin-left: 1px;
@@ -228,7 +228,7 @@ input[type="file"]{
 
 .image__upload input[type=file]::-webkit-file-upload-button{
     margin-left: 33.5%;
-    border: .5px solid black;
+    border: 1px solid black;
     background-color: transparent;
     color: black;
     border-radius: 5px;
