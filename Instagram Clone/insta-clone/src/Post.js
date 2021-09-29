@@ -133,7 +133,7 @@ useEffect(() => {
             <h3>Share your post on your<br/> social medias</h3><br></br><br></br>
         <div className='post__sharebtn'>
         <FacebookShareButton
-        url={"https://google.com"}
+        url={"https://instagram-clone-604db.web.app"}
         quote={"Check out my new post on Familygram"}
         hashtag={"#familygram"}
         description={"Drop a like ;)"}
@@ -144,7 +144,7 @@ useEffect(() => {
         
         <TwitterShareButton
         title={"Check out my new post on Familygram"}
-        url={"https://google.com"}
+        url={"https://instagram-clone-604db.web.app"}
         hashtags={["familygram", "new post"]}
         >
         <TwitterIcon size={45} round={true} id='tw-icon' />
@@ -152,14 +152,14 @@ useEffect(() => {
 
         <TelegramShareButton
         title={"Check out my new post on Familygram"}
-        url={"https://google.com"}
+        url={"https://instagram-clone-604db.web.app"}
         >
         <TelegramIcon size={45} round={true} id='tg-icon'/>
         </TelegramShareButton>
 
         <RedditShareButton
         title={"Check out my new post on Familygram"}
-        url={"https://google.com"}
+        url={"https://instagram-clone-604db.web.app"}
         >
         <RedditIcon size={45} round={true} id='rd-icon'/>
         </RedditShareButton>
